@@ -1,0 +1,18 @@
+<div [formGroup]="formGroup">
+    <div [ngSwitch]="question.type">
+        <div *ngSwitchCase="'TEXT'">
+            <app-question-text [question]="question" type="text">
+            </app-question-text>
+        </div>
+
+        <div *ngSwitchCase="'NUMBER'">
+            <app-question-text [question]="question" type="number">
+            </app-question-text>
+        </div>
+
+        <div *ngSwitchCase="'MULTIPLE'">
+            <app-question-select-dialog [question]="question">
+            </app-question-select-dialog>
+        </div>
+    </div>
+</div>
